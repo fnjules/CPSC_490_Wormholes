@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://dgp5gctmgb8x3"]
+
+[ext_resource type="Texture2D" uid="uid://dhiexxxnrgqwm" path="res://Assets/Sprites/credit_screen_bg.png" id="1_s0fe0"]
+[ext_resource type="Script" uid="uid://onyoxcmkybou" path="res://Scripts/menu_scene.gd" id="1_w4cdh"]
+[ext_resource type="FontFile" uid="uid://is3p0q17offx" path="res://Assets/Fonts/OldStandardTT-Bold.ttf" id="2_w4cdh"]
+[ext_resource type="FontFile" uid="uid://ceshndpcai4y1" path="res://Assets/Fonts/OldStandardTT-Regular.ttf" id="3_i2hkk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kcfjh"]
+bg_color = Color(0.294118, 0.294118, 0.294118, 0.611765)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2hkk"]
+content_margin_top = 8.0
+
+[node name="menu_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w4cdh")
+
+[node name="MenuBg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2304.0
+offset_bottom = 1296.0
+texture = ExtResource("1_s0fe0")
+
+[node name="MenuTitle" type="Label" parent="."]
+custom_minimum_size = Vector2(600, 175)
+layout_mode = 0
+offset_left = 852.0
+offset_top = 100.0
+offset_right = 1452.0
+offset_bottom = 275.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_w4cdh")
+theme_override_font_sizes/font_size = 100
+text = "Menu Screen"
+horizontal_alignment = 1
+
+[node name="HomeButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1881.0
+offset_top = 1155.0
+offset_right = 2231.0
+offset_bottom = 1230.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_i2hkk")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_kcfjh")
+text = "Back to Home"
+
+[node name="MasterVolSlider" type="HSlider" parent="."]
+offset_left = 676.0
+offset_top = 432.0
+offset_right = 1676.0
+offset_bottom = 594.0
+theme_override_styles/slider = SubResource("StyleBoxFlat_i2hkk")
+
+[node name="MasterLabel" type="Label" parent="MasterVolSlider"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="MusicVolSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 16.0
+
+[node name="MusicLabel" type="Label" parent="MusicVolSlider"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="SFXVolSlider" type="HSlider" parent="."]
+offset_right = 8.0
+offset_bottom = 16.0
+
+[node name="SFXLabel" type="Label" parent="SFXVolSlider"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

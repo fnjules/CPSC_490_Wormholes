@@ -1,0 +1,124 @@
+[gd_scene load_steps=9 format=3 uid="uid://cl2pl0rncyan0"]
+
+[ext_resource type="Script" uid="uid://baheedtfgxp06" path="res://Scripts/TitleScreen.gd" id="1_iuplg"]
+[ext_resource type="Texture2D" uid="uid://drjl6uamuu08y" path="res://Assets/Sprites/title_screen_bg.png" id="2_p3fck"]
+[ext_resource type="FontFile" uid="uid://bqgrwakv6g6tm" path="res://Assets/Fonts/Domine-VariableFont_wght.ttf" id="3_4gxqj"]
+[ext_resource type="AudioStream" uid="uid://c2wf0qe23jebk" path="res://Assets/Sounds/button_click.wav" id="4_55kwv"]
+[ext_resource type="Texture2D" uid="uid://gbiawg4ofxl1" path="res://Assets/Sprites/godot_icon.png" id="4_twnyg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4gxqj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_twnyg"]
+
+[sub_resource type="Environment" id="Environment_55kwv"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 1.0
+glow_strength = 0.95
+glow_blend_mode = 0
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iuplg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2304.0
+offset_bottom = 1296.0
+texture = ExtResource("2_p3fck")
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 196.0
+offset_top = 838.0
+offset_right = 666.0
+offset_bottom = 978.0
+theme_override_fonts/font = ExtResource("3_4gxqj")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxTexture_4gxqj")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_twnyg")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_twnyg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_twnyg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_twnyg")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_twnyg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_twnyg")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_twnyg")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_twnyg")
+text = "Exit
+"
+
+[node name="ExitSfx" type="AudioStreamPlayer" parent="ExitButton"]
+stream = ExtResource("4_55kwv")
+
+[node name="MenuButton" type="Button" parent="."]
+offset_left = 194.0
+offset_top = 569.0
+offset_right = 664.0
+offset_bottom = 709.0
+theme_override_fonts/font = ExtResource("3_4gxqj")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxTexture_4gxqj")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_twnyg")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_twnyg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_twnyg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_twnyg")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_twnyg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_twnyg")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_twnyg")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_twnyg")
+text = "Menu"
+
+[node name="MenuSfx" type="AudioStreamPlayer" parent="MenuButton"]
+stream = ExtResource("4_55kwv")
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 321.0
+offset_right = 666.0
+offset_bottom = 461.0
+theme_override_fonts/font = ExtResource("3_4gxqj")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxTexture_4gxqj")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_twnyg")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_twnyg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_twnyg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_twnyg")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_twnyg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_twnyg")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_twnyg")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_twnyg")
+text = "Start"
+
+[node name="StartSfx" type="AudioStreamPlayer" parent="StartButton"]
+stream = ExtResource("4_55kwv")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_55kwv")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 1230.0
+offset_right = 241.0
+offset_bottom = 1286.0
+theme_override_colors/default_color = Color(0.607302, 0.607302, 0.607302, 1)
+theme_override_fonts/normal_font = ExtResource("3_4gxqj")
+theme_override_font_sizes/normal_font_size = 40
+text = "made with"
+
+[node name="GodotIcon" type="Sprite2D" parent="."]
+modulate = Color(0.603248, 0.603248, 0.603248, 1)
+position = Vector2(263, 1245)
+scale = Vector2(0.0634766, 0.0644531)
+texture = ExtResource("4_twnyg")
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

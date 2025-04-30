@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnfc2bu5n5oky"]
+
+[ext_resource type="Texture2D" uid="uid://dhiexxxnrgqwm" path="res://Assets/Sprites/credit_screen_bg.png" id="1_7fhvw"]
+[ext_resource type="Script" uid="uid://dhqy4dk06yjok" path="res://Scripts/credit_screen.gd" id="1_wdmfl"]
+[ext_resource type="FontFile" uid="uid://is3p0q17offx" path="res://Assets/Fonts/OldStandardTT-Bold.ttf" id="2_s0ckc"]
+[ext_resource type="FontFile" uid="uid://ceshndpcai4y1" path="res://Assets/Fonts/OldStandardTT-Regular.ttf" id="3_wdmfl"]
+
+[node name="Credit_Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wdmfl")
+
+[node name="StaticBackground" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(2304, 1296)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_7fhvw")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(1200, 1296)
+layout_mode = 0
+offset_left = 552.0
+offset_right = 1752.0
+offset_bottom = 1296.0
+vertical_scroll_mode = 3
+
+[node name="Control" type="Control" parent="ScrollContainer"]
+custom_minimum_size = Vector2(1200, 3888)
+layout_mode = 2
+
+[node name="CreditLabel" type="Label" parent="ScrollContainer/Control"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 0
+offset_left = 400.0
+offset_top = 1296.0
+offset_right = 800.0
+offset_bottom = 1396.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_s0ckc")
+theme_override_font_sizes/font_size = 75
+text = "CREDITS"
+horizontal_alignment = 1
+
+[node name="LongCreditText" type="RichTextLabel" parent="ScrollContainer/Control"]
+custom_minimum_size = Vector2(1200, 1196)
+layout_mode = 0
+offset_top = 1396.0
+offset_right = 1200.0
+offset_bottom = 2592.0
+theme_override_fonts/normal_font = ExtResource("3_wdmfl")
+theme_override_font_sizes/normal_font_size = 45
+text = "A game made for CPSC 490
+
+Programming:
+Julie Fan
+
+Art:
+Julie Fan
+
+Music:
+freesound.org
+
+Testers:
+Inssia Ahmed
+Jacob Lessing
+Denny Zhang
+
+Tools used:
+Google Fonts library
+Procreate
+
+Special thanks:
+Thesis Advisor: Mike Shah
+My friends
+My family
+Yale College '25"
+horizontal_alignment = 1
